@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
+
+  {% include head.html %}
+
   <body>
-    <div>
+
+    {% include header.html %}
+    
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+        <!-- Blog Entries Column -->
+            <div class="col-md-8">
+ 
+                   {{ content }}
       
-        {{ content }}
-      
-    </div>
+
+      {% include right.html%}
+
+    {% include footer.html %}
+
   </body>
+
 </html>

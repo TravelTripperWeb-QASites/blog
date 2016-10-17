@@ -1,0 +1,81 @@
+</div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-4">
+
+                <!-- Blog Search Well -->
+                <div class="well">
+                    <h4>Blog Search</h4>
+                    <form action="/search.html" method="get">
+                    <div class="input-group">
+                        <input id="search-box" type="text"  name="query" class="form-control">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+                    </div>
+                    </form>
+                    <!-- /.input-group -->
+                </div>
+
+                
+
+                <!-- Side Widget Well -->
+                <div class="well">
+                    <h4>Latest Posts</h4>
+                    <ul class="recent-list">
+    {% for post in site.posts limit:5%}
+      <li>
+         
+ 
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+         
+      </li>
+    {% endfor %}
+  </ul>
+                </div>
+             <!-- Blog Categories Well -->
+                <div class="well">
+                    <h4>Blog Categories</h4>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.col-lg-6 -->
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.col-lg-6 -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+            </div>
+
+
+        </div>
+        <!-- /.row -->
+  
+{% if page.url == "/search.html" %} 
+<script src="/js/lunr.js"></script>
+<script src="/js/search.js"></script>
+{% endif %}
