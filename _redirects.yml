@@ -15,3 +15,11 @@
 - A-B-C/: d
 - A-B-C: d
 - A-B-C/: d
+- abc_def-ghi: e
+- abc_def-ghi/: e
+- Abc_def-ghi: e
+- Abc_def-ghi/: e
+- Abc_Def-Ghi: e
+- Abc_Def-Ghi/: e
+- ABC_DEF-GHI: e
+- ABC_DEF-GHI/: e
