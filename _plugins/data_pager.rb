@@ -4,7 +4,7 @@ module Jekyll
     alias_method :render_without_paginator, :render
     def render(layouts, site_payload)
       site_payload["data_paginator"] = data_pager.to_liquid
-      render_without_paginator
+      render_without_paginator(layouts, site_payload)
     end
   end
   
