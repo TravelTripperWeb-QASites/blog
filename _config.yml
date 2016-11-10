@@ -25,6 +25,8 @@ data_paginate:
   data: 'blog'
   path: 'blogs/page:num'
   pagination_template: 'blogs/index.html'
+  sort_field: 'date'
+  sort_reverse: true
   
 #paginate_path: "/page:num/"
 markdown: kramdown 

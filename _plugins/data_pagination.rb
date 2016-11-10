@@ -96,8 +96,16 @@ module Jekyll
 
       def self.models(site)
         model_name = site.config['data_paginate'] && site.config['data_paginate']['data']
+        sort_field = (site.config['data_paginate'] && site.config['data_paginate']['sort_field']) || 'date'
+        reverse = (site.config['data_paginate'] && site.config['data_paginate']['sort_reverse']) || false
         if model_name && site.data && site.data['_models']
-          return site.data['_models'][model_name]
+          models = site.data['_models'][model_name] || []
+          models.sort! {|x,y| x[sort_field]<=>y[sort_field] }
+          if reverse
+            models.reverse!
+          else
+            models
+          end
         else
           return nil
         end
