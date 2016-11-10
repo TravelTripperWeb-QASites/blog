@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div class="home">
+ 
+  <h3>Blogs in {{page.data.name}}</h3>
+  <ul class="post-list">
+    {% assign posts = site.data._models.blog | sort: 'date' | reverse %}
+    {% for post in posts %}
+      {% assign category_ids = post.categories | map: 'id' %}
+      {% if category_ids contains page.data.id %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <h2>
+            <a class="post-link" href="{{ post.id | permalink: model_dir: 'blogs'  }}">{{ post.title }}</a>
+          </h2>
+          {{ post.body | strip_html | truncatewords: 6  }}
+          <p><a class="readon" href="{{ post.id | permalink: model_dir: 'blogs'  }}">Read More</a></p>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+
+</div>

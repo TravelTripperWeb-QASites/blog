@@ -44,7 +44,7 @@
                       <ul class="list-unstyled">
                         {% assign categories = site.data._models.category | sort: 'name' %}
                         {% for category in categories %}
-                          <li "col-lg-6"><a href="/blogs/categories/{{category.id | permalink: model_dir: 'blogs' }}">{{category.name}}</a>
+                          <li "col-lg-6"><a href="{{category.id | permalink: model_dir: 'categories' }}">{{category.name}}</a>
                         {% endfor %}
                       </uL>
                     </div>

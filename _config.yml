@@ -33,3 +33,6 @@ page_gen:
   - data: 'blog'
     template: 'post'
     dir: 'blogs'
+  - data: 'category'
+    template: 'category'
+    dir: 'categories'
