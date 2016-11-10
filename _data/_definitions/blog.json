@@ -5,7 +5,7 @@
   },
   "date": {
     "type": "date_time",
-    "required": true,
+    "required": true
   },
   "categories": {
     "required": true,
