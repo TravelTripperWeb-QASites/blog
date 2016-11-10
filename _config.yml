@@ -16,15 +16,17 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
-gems: [jekyll-paginate]
 # Build settings
-paginate: 3
+data_paginate: 
+  per_page: 3
+  data: 'blog'
+  path: 'blogs/page:num'
+  pagination_template: 'blogs/index.html'
+  
 #paginate_path: "/page:num/"
 markdown: kramdown 
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
+
+page_gen:
+  - data: 'blog'
+    template: 'post'
+    dir: 'blogs'

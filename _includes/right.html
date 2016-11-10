@@ -30,7 +30,7 @@
       <li>
          
  
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          <a class="post-link" href="{{ post.id | permalink: model_dir: 'blogs' }}">{{ post.title }}</a>
           <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
          
       </li>
@@ -41,42 +41,14 @@
                 <div class="well">
                     <h4>Blog Categories</h4>
                     <div class="row">
-                      <div class="col-lg-6">
-                        <ul class="list-unstyled">
-                          {% for category in site.data._definitions.blog.categories.options %}
-                            <li><a href="/categories/{{category | slugify }}">{{category}}</a>
-                          {% endfor %}
-                        </uL>
-                      </div>
+                      <ul class="list-unstyled">
+                        {% assign categories = site.data._models.category | sort: 'name' %}
+                        {% for category in categories %}
+                          <li "col-lg-6"><a href="/blogs/categories/{{category.id | permalink: model_dir: 'blogs' }}">{{category.name}}</a>
+                        {% endfor %}
+                      </uL>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- /.col-lg-6 -->
-                        <div class="col-lg-6">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- /.col-lg-6 -->
-                    </div>
+
                     <!-- /.row -->
                 </div>
             </div>

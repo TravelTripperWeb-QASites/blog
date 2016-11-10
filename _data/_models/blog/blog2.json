@@ -1,7 +1,5 @@
 {
-  "layout": "post",
   "title":  "The latest post",
   "date":   "2016-08-23 15:54:11",
-  "categories": ["jekyll"],
-  "content":"<p>Post Two</p>"
+  "body":"<p>Post Two</p>"
 }

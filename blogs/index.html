@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<div class="home">
+ 
+
+  <ul class="post-list">
+    {% for post in data_paginator.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.id | permalink: model_dir: 'blogs'  }}">{{ post.title }}</a>
+        </h2>
+        {{ post.body | strip_html | truncatewords: 6  }}
+        <p><a class="readon" href="{{ post.id | permalink: model_dir: 'blogs'  }}">Read More</a></p>
+      </li>
+    {% endfor %}
+  </ul>
+<!-- Pagination links -->
+<div class="pagination"> 
+ <p><span class="page_number ">Page: {{ data_paginator.page }} of {{ data_paginator.total_pages }}</span></p>
+<ul class="pagination">
+
+  {% if data_paginator.previous_page %}
+    <li><a href="{{ data_paginator.previous_page_path }}" class="previous">Previous</a></li>
+  {% else %}
+    <li><span class="previous">Previous</span></li>
+  {% endif %}
+   
+  {% if data_paginator.next_page %}
+    <li><a href="{{ data_paginator.next_page_path }}" class="next">Next</a></li>
+  {% else %}
+    <li><span class="next ">Next</span></li>
+  {% endif %}
+  </ul>
+
+</div>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>

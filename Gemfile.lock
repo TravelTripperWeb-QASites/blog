@@ -28,7 +28,6 @@ GEM
       pathutil (>= 0.8)
       rack (> 1, < 2)
       sprockets (~> 3.3, < 3.7)
-    jekyll-paginate (1.1.0)
     jekyll-sass-converter (1.4.0)
       sass (~> 3.4)
     jekyll-watch (1.5.0)
@@ -61,7 +60,6 @@ DEPENDENCIES
   i18n
   jekyll (= 3.1.6)
   jekyll-assets
-  jekyll-paginate
   xkeys
 
 BUNDLED WITH
