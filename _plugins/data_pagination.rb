@@ -83,7 +83,6 @@ module Jekyll
         explicit_page = site.config['data_paginate'] && site.config['data_paginate']['pagination_template']
         if explicit_page
           site.pages.each do |page| 
-            puts "#{page.path} - #{explicit_page} #{page.path == explicit_page}"
             return page if page.path.to_s == explicit_page.to_s
           end
         end
