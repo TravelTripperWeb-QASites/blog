@@ -1,5 +1,6 @@
 ---
 layout: search
+permalink: search.html
 ---
 
 <div class="home">
@@ -9,7 +10,7 @@ layout: search
 
 <script>
   window.store = {
-    {% for post in site.posts %}
+    {% for post in site.data._models.blog %}
       "{{ post.url | slugify }}": {
         "title": "{{ post.title | xml_escape }}",
         "author": "{{ post.author | xml_escape }}",
