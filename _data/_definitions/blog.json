@@ -1,0 +1,23 @@
+{
+  "layout": {
+    "required": true,
+    "type": "select",
+    "options": ["post"]
+  },
+  "title":  {
+    "required": true
+  },
+  "date": {
+    "type": "datetime",
+    "required": true,
+  },
+  "categories": {
+    "required": true,
+    "type": "select",
+    "multiple": true,
+    "options": ["jekyll", "update"]
+  },
+  "content": {
+    "type": "richtext"
+  }
+}
