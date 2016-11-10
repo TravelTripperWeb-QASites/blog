@@ -1,5 +1,6 @@
 {
   "title":  {
+    "type": "string",
     "required": true
   },
   "date": {
